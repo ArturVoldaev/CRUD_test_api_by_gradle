@@ -1,0 +1,37 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation group: 'org.testng', name: 'testng', version: '7.8.0'
+    implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '4.11.0'
+
+    // JSON
+    implementation group: 'com.google.code.gson', name: 'gson', version: '2.10.1'
+
+    //API
+    implementation group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.14'
+    implementation group: 'org.apache.httpcomponents', name: 'fluent-hc', version: '4.5.14'
+
+    // LOMBOK
+    compileOnly group:  'org.projectlombok', name: 'lombok', version: '1.18.28'
+    annotationProcessor group:  'org.projectlombok', name: 'lombok', version: '1.18.28'
+    testCompileOnly group:  'org.projectlombok', name: 'lombok', version: '1.18.28'
+    testAnnotationProcessor group:  'org.projectlombok', name: 'lombok', version: '1.18.28'
+
+    testImplementation 'io.rest-assured:rest-assured:5.3.2'
+    implementation group: 'javax.xml.bind', name: 'jaxb-api', version: '2.4.0-b180830.0359'
+
+    implementation group: 'com.github.javafaker', name: 'javafaker', version: '0.15'
+}
+
+test {
+    useTestNG()
+}
